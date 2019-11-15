@@ -54,6 +54,8 @@ export class SeatComponent implements OnInit {
     
   }
 
+  
+
 
 
   show()
@@ -147,6 +149,11 @@ console.log(this.newArray);
 
     
   }
+
+ confirmBooking(name:any[])
+ {
+   console.log(name);
+ }
 
   
 
