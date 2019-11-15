@@ -17,25 +17,10 @@
   <h4>Imdb Rating:-<span>{{i.Rating}}</span></h4>
   </div>
   <hr>
-</div>
 
-<div class="container">
   
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Book</button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-
-            <div class="col-sm-3 space">
+  <div class="col-sm-3 space">
               <select [(ngModel)]="selectedcity" (change)="city()">
                 <option>Select a Country</option> 
                   <option>Pune</option> 
@@ -45,7 +30,8 @@
               </select>
             </div>
 
-        <div class="col-sm-1 space">
+
+             <div class="col-sm-1 space">
         </div>
 
         
@@ -71,21 +57,35 @@
               
             </div>
 
-        
-    
-     
+<div class="row">
+  <div class="col-sm-4 space">
+  </div>
+            <div class="col-sm-4 space">
 
-            
-          </div>
+          <button type="button" (click)="SeatBooking()" class="btn btn-primary" >Select Seat</button>
+          
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+
+        <div class="col-sm-4 space">
   </div>
 </div>
 
+        
 </div>
+</div>
+</div>
+
+
+          
+
+        
+
+            
+          
+        
+     
+    
+
+
 
 

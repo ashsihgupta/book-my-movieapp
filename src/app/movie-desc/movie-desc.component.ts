@@ -37,6 +37,22 @@ export class MovieDescComponent implements OnInit {
     this.MovieByTheatrer=this.service.getTheater(this.selectedcity);
     console.log(this.selectedcity);
     console.log(this.MovieByTheatrer);
+    this.service.city=this.selectedcity;
+  }
+
+  time()
+  {
+    this.service.time=this.selectedtime;
+  }
+
+  date()
+  {
+    this.service.date=this.selectedate;
+  }
+
+  SeatBooking()
+  {
+    this.router.navigate(['seat']);
   }
 
 }
