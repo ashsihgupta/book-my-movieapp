@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BookMyMovieService} from '../book-my-movie.service';
+import { Router,ActivatedRoute,ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-seat',
@@ -42,7 +43,7 @@ export class SeatComponent implements OnInit {
   
 
   
-  constructor(private service :BookMyMovieService) { }
+  constructor(private service :BookMyMovieService,private router:Router) { }
 
   ngOnInit() {
 
@@ -155,6 +156,7 @@ console.log(this.newArray);
  {
    console.log(name);
    this.service.confirmBooking=name;
+   this.router.navigate(['ticket'])
  }
 
   

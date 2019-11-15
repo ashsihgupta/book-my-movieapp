@@ -38,16 +38,19 @@ export class MovieDescComponent implements OnInit {
     console.log(this.selectedcity);
     console.log(this.MovieByTheatrer);
     this.service.city=this.selectedcity;
+    console.log(this.service.city+"city service time");
   }
 
   time()
   {
     this.service.time=this.selectedtime;
+     console.log(this.service.time+"city service time");
   }
 
   date()
   {
     this.service.date=this.selectedate;
+     console.log(this.service.date+"city service time");
   }
 
   SeatBooking()

@@ -4,6 +4,7 @@ import {MovieComponent} from '../movie/movie.component';
 import {MovieDescComponent} from '../movie-desc/movie-desc.component'
 import { RouterModule } from '@angular/router';
 import {SeatComponent} from '../seat/seat.component';
+import {TheaterComponent} from '../theater/theater.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import {SeatComponent} from '../seat/seat.component';
       { path: '', component: MovieComponent },
       { path: 'movie/:id', component: MovieDescComponent },
       { path: 'seat', component: SeatComponent },
+      { path: 'ticket', component: TheaterComponent },
 
       
       
