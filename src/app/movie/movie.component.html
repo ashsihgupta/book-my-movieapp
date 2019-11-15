@@ -1,0 +1,66 @@
+
+ 
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      
+      <li><a href="#">Page 1</a></li>
+     
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<div class="row">
+<div class="col-sm-3 option">
+  <label >Language</label>
+<select>
+<option>Select By Language</option>
+<option *ngFor="let data of Languagedata ">{{data}}</option>
+</select>
+</div>
+<div class="col-sm-1">
+</div>
+
+
+<div class="col-sm-3 option">
+  <label class="option">Generes</label>
+<select>
+<option>Select By Genere</option>
+<option *ngFor="let data of Languagedata ">{{data}}</option>
+</select>
+</div>
+
+<div class="col-sm-1">
+</div>
+
+
+</div>
+
+
+
+
+<div class="row">
+<div  *ngFor="let i of MovieArray" >
+<div class="col-sm-3 space">
+<img src="{{i.img}}" id="imgsize" (click) ="getMovieById(i.id)" class="img-responsive"/>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
