@@ -13,6 +13,12 @@ export class MovieDescComponent implements OnInit {
 
   SingleMovie:any=[];
 
+  selectedate:string;
+  selectedcity:string;
+  selectedtime:string;
+
+  MovieByTheatrer:any=[];
+
   ngOnInit() {
     this.getDataById();
   }
@@ -24,6 +30,13 @@ export class MovieDescComponent implements OnInit {
       this.SingleMovie=this.service.getMovieByID(id);
       console.log(this.SingleMovie.name+"THIS IS THE ID")
     })
+  }
+
+  city()
+  {
+    this.MovieByTheatrer=this.service.getTheater(this.selectedcity);
+    console.log(this.selectedcity);
+    console.log(this.MovieByTheatrer);
   }
 
 }
