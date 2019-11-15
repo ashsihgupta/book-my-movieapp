@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BookMyMovieService} from '../book-my-movie.service';
 
 @Component({
   selector: 'app-seat',
@@ -41,7 +42,7 @@ export class SeatComponent implements OnInit {
   
 
   
-  constructor() { }
+  constructor(private service :BookMyMovieService) { }
 
   ngOnInit() {
 
@@ -153,6 +154,7 @@ console.log(this.newArray);
  confirmBooking(name:any[])
  {
    console.log(name);
+   this.service.confirmBooking=name;
  }
 
   

@@ -178,6 +178,8 @@ export class BookMyMovieService {
   date:string;
   city:string;
 
+  confirmBooking:any=[];
+
   getMovies()
   {
 
