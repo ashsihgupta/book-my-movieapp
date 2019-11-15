@@ -9,10 +9,11 @@ import { BookMyMovieService } from './book-my-movie.service';
 import { TheaterComponent } from './theater/theater.component';
 import { MovieDescComponent } from './movie-desc/movie-desc.component';
 import { RoutingModule } from './routing/routing.module';
+import { SeatComponent } from './seat/seat.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ,RoutingModule],
-  declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent ],
+  declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent ],
   bootstrap:    [ AppComponent ],
   providers: [BookMyMovieService]
 })
