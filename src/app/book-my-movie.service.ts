@@ -141,9 +141,38 @@ export class BookMyMovieService {
 
   ];
 
+  Theaters=[
+    {
+      "id":1,
+      "city":"Pune",
+      "theater":["Xion","I-max","Central"]
+    },
+
+    {
+      "id":2,
+      "city":"Mumbai",
+      "theater":["Cinipolis","Joker","Central"]
+    },
+
+    {
+      "id":3,
+      "city":"Delhi",
+      "theater":["Jantar-Mantar","I-max","Central"]
+    },
+
+    {
+      "id":4,
+      "city":"Chandigarh",
+      "theater":["Pvr","I-max","Unversity Road"]
+    },
+
+    ];
+
   MovieData:any=[];
 
   SingleMovieData:any=[];
+
+  SelectedTheaterByCity:any=[];
 
   getMovies()
   {
@@ -167,6 +196,16 @@ export class BookMyMovieService {
     this.SingleMovieData=this.MovieApi.filter(data => data.id=== id);
 
     return this.SingleMovieData;
+  }
+
+  getTheater(name:any)
+  {
+
+    this.SelectedTheaterByCity=this.Theaters.filter(data => 
+    data.city=== name);
+
+    return this.SelectedTheaterByCity;
+    
   }
 
 }
