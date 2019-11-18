@@ -1,3 +1,11 @@
+*
+{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(252, 239, 239);
+}
+
+
 .screen
 {
   width:100%;
@@ -11,6 +19,8 @@
 table
 {
   text-align:center;
+  margin-left: 40%;
+  margin-top: 20px;
 }
 
 .seatGap
@@ -32,20 +42,22 @@ input[type=button] {
 .Displaytable
 {
   text-align:center;
+   margin-right: 550px;
 }
 .Displaytable td, .Displaytable th {
     border: 1px solid;
     text-align: center;
     height: 20px;
     width: 1500px;
+   
 }
 
 .btn
 {
-  margin-left: 110px;
-  margin-bottom: 50px;
+  margin-left: 45%;
+  margin-bottom: 10px;
   background-color: lightblue;
   color: black;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
