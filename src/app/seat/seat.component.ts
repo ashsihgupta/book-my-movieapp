@@ -155,6 +155,8 @@ console.log(this.newArray);
  confirmBooking(name:any[])
  {
    console.log(name);
+   this.service.seat=this.newArray;
+   sessionStorage.setItem('keyseat', JSON.stringify(this.newArray));
    this.service.confirmBooking=name;
    this.router.navigate(['ticket'])
  }

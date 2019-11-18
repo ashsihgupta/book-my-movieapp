@@ -174,9 +174,7 @@ export class BookMyMovieService {
 
   SelectedTheaterByCity:any=[];
 
-  time:string;
-  date:string;
-  city:string;
+ 
 
   confirmBooking:any=[];
 
