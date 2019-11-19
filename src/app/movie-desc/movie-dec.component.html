@@ -20,9 +20,10 @@
 
   
 
-  <div class="col-sm-3 space">
-              <select [(ngModel)]="selectedcity" (change)="city()">
-                <option>Select a Country</option> 
+  <div class="col-sm-2 space">
+              <select [(ngModel)]="selectedcity"  (change)="city()">
+                
+                <option>Select a City</option> 
                   <option>Pune</option> 
                   <option>Mumbai</option> 
                   <option>Delhi</option> 
@@ -30,8 +31,18 @@
               </select>
             </div>
 
+            <div class="col-sm-2 space">
+              <select [(ngModel)]="selectedtheater" *ngFor="let i of MovieByTheatrer " (change)="theater()">
+                
+               
+                  <option *ngFor="let j of i.theater">{{j}}</option> 
+                  
+              </select>
+            </div>
+
 
              <div class="col-sm-1 space">
+               
         </div>
 
         
@@ -66,14 +77,20 @@
           
         </div>
 
+  
+
         <div class="col-sm-4 space">
   </div>
+
+       
 </div>
 
         
 </div>
 </div>
 </div>
+
+
 
 
           

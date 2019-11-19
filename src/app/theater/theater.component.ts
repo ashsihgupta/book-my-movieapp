@@ -23,6 +23,7 @@ export class TheaterComponent implements OnInit {
   date:string;
   time:string;
   seat:any[];
+  theater:string;
   
 
   ngOnInit() {
@@ -63,7 +64,7 @@ export class TheaterComponent implements OnInit {
      this.date = sessionStorage.getItem('keydate');
      this.time = sessionStorage.getItem('keytime');
      this.seat = JSON.parse(sessionStorage.getItem('keyseat'))
-     
+     this.theater=sessionStorage.getItem('keytheater');
 
     
   }

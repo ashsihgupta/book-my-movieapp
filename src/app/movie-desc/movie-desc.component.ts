@@ -16,6 +16,7 @@ export class MovieDescComponent implements OnInit {
   selectedate:string;
   selectedcity:string;
   selectedtime:string;
+  selectedtheater:string
 
   MovieByTheatrer:any=[];
 
@@ -57,6 +58,12 @@ export class MovieDescComponent implements OnInit {
   SeatBooking()
   {
     this.router.navigate(['seat']);
+  }
+
+  theater()
+  {
+    sessionStorage.setItem('keytheater',JSON.stringify(this.selectedtheater));
+    console.log(this.selectedtheater+"ydfsdfsdfgsfgsf");
   }
 
 }
