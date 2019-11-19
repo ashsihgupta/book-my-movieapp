@@ -17,6 +17,7 @@
     "jspdf-autotable": "2.3.2",
     "jszip": "3.1.5",
     "ng-pdf-make": "0.0.2",
+    "ng2-search-filter": "^0.5.1",
     "rxjs": "^6.5.2",
     "zone.js": "^0.9.1"
   },

@@ -11,9 +11,10 @@ import { MovieDescComponent } from './movie-desc/movie-desc.component';
 import { RoutingModule } from './routing/routing.module';
 import { SeatComponent } from './seat/seat.component';
 import { PipePipe } from './pipe.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ,RoutingModule],
+  imports:      [ BrowserModule, FormsModule ,RoutingModule,Ng2SearchPipeModule],
   declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent, PipePipe ],
   bootstrap:    [ AppComponent ],
   providers: [BookMyMovieService]
