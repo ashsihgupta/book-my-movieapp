@@ -1,37 +1,92 @@
 
-<div id="content" #content >
-<body>
-  <div class="container">
-    <section>
-      <div class="left">
-        <div class="event">Movie</div>
-        <div class="title">{{name}}</div>
-        <div class="info">{{date}} // {{time}} // {{city}}</div>
-      </div>
-      <div class="right">
-        
-        <div class="seats" *ngFor="let i of seat">seat<span>{{i}}</span></div>
-      </div>
-    </section>
-  </div>
-</body>
 
+
+
+<div id="content" #content>
+  <h4>Movie Ticket</h4>
+ 
+
+
+  <table class="table table-sm" >
+    <tr >
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Auditorium</td>
+      <td></td>
+      <td>{{theater}}</td>
+      
+    </tr>
+    <td></td>
+      <td></td>
+      <td></td>
+    <tr>
+
+      
+      
+    </tr>
+    <td></td>
+      <td></td>
+      <td></td>
+    <tr>
+      
+    </tr>
+      <tr>
+      <td>Seat</td>
+      <td></td>
+      <td ><span *ngFor="let i of seat">{{i}}</span></td>
+    </tr>
+
+<tr>
+      <td>Movie</td>
+      <td></td>
+      <td >{{movie}}</td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td></td>
+      <td>{{date}}</td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>Time</td>
+      <td></td>
+      <td>{{time}}</td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+
+    <tr>
+      <td>City</td>
+      <td></td>
+      <td>{{city}}</td>
+    </tr>
+  </table>
 </div>
 
 
-<div class="row">
-  <div class="col-md-5">
-  </div>
-  <div class="col-md-4">
-
-    <button (click)="downloadPDF()" class="btn btn-success btn">Export To PDF</button>
-  </div>
-  <div class="col-md-3">
-  </div>
-
-
-
-
+<div style="text-align:center;">
+<button (click)="downloadPDF()" class="btn btn-success">Export To PDF</button>
+</div>
 
     
 

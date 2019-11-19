@@ -30,6 +30,15 @@ export class MovieDescComponent implements OnInit {
       let id=parseInt(params.get("id"));
       this.SingleMovie=this.service.getMovieByID(id);
       console.log(this.SingleMovie.name+"THIS IS THE ID")
+      
+
+      for(var i=0;i<this.SingleMovie.length;i++)
+      {
+
+
+          sessionStorage.setItem('movie', JSON.stringify(this.SingleMovie[i].name));
+      }
+      
     })
   }
 
