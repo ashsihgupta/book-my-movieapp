@@ -21,9 +21,9 @@
 <div class="row">
 <div class="col-sm-3 option">
   <label >Language</label>
-<select>
-<option>Select By Language</option>
-<option *ngFor="let data of Languagedata ">{{data}}</option>
+<select [(ngModel)]="sortoption">>
+
+<option *ngFor="let data of Languagedata " value="{{data}}">{{data}}</option>
 </select>
 </div>
 <div class="col-sm-1">
@@ -32,13 +32,22 @@
 
 <div class="col-sm-3 option">
   <label class="option">Generes</label>
-<select>
-<option>Select By Genere</option>
-<option *ngFor="let data of Languagedata ">{{data}}</option>
+<select [(ngModel)]="sortoption">>
+
+<option *ngFor="let data of Languagedata "  value="language">{{data}}</option>
 </select>
 </div>
 
 <div class="col-sm-1">
+</div>
+
+<div class="col-sm-3 option">
+  <label class="option">By Name</label>
+<select [(ngModel)]="sortoption">
+  
+        <option value="alphabatecially">By Name</option>
+               
+      </select>
 </div>
 
 
@@ -48,7 +57,7 @@
 
 
 <div class="row">
-<div  *ngFor="let i of MovieArray" >
+<div  *ngFor="let i of MovieArray | pipe:sortoption" >
 <div class="col-sm-3 space">
 <img src="{{i.img}}" id="imgsize" (click) ="getMovieById(i.id)" class="img-responsive"/>
 </div>

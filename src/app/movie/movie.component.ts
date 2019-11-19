@@ -15,6 +15,7 @@ export class MovieComponent implements OnInit {
   Languagedata:any=['Hindi','English'];
 
   MovieArray:any=[];
+  sortoption = '';
 
   constructor(private service:BookMyMovieService,private router:Router) { }
 
