@@ -1,6 +1,4 @@
 
- 
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -8,11 +6,12 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li></li>
-      <li class="fl"><div class="search-hero">
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="fl"><span class="search-hero">
       <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
-    </div></li>
-     
+    </span></li>
     </ul>
   </div>
 </nav>
@@ -20,12 +19,14 @@
 
 
 
+
+
 <div class="row">
 <div class="col-sm-3 option">
-  <label >Language</label>
-<select [(ngModel)]="sortoption">>
+  <label class="option" >Language</label>
+<select [(ngModel)]="languageoption" (change)="languagechanged()">
 
-<option *ngFor="let data of Languagedata " value="{{data}}">{{data}}</option>
+<option *ngFor="let data of Languagedata " >{{data}}</option>
 </select>
 </div>
 <div class="col-sm-1">
@@ -33,10 +34,10 @@
 
 
 <div class="col-sm-3 option">
-  <label class="option">Generes</label>
-<select [(ngModel)]="sortoption">>
+  <label >Generes</label>
+<select [(ngModel)]="genereoption">
 
-<option *ngFor="let data of Languagedata "  value="language">{{data}}</option>
+<option *ngFor="let data of Languagedata " >{{data}}</option>
 </select>
 </div>
 

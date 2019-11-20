@@ -64,7 +64,7 @@ export class TheaterComponent implements OnInit {
      this.city = JSON.parse(sessionStorage.getItem('key'));
      this.date = JSON.parse(sessionStorage.getItem('keydate'));
      this.time = JSON.parse(sessionStorage.getItem('keytime'));
-     this.seat = JSON.parse(sessionStorage.getItem('keyseat'))
+     this.seat = JSON.parse(sessionStorage.getItem('keyseat'));
      this.theater=JSON.parse(sessionStorage.getItem('keytheater'));
      this.movie=JSON.parse(sessionStorage.getItem('movie'));
 

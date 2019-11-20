@@ -15,21 +15,29 @@ export class MovieComponent implements OnInit {
   Languagedata:any=['Hindi','English'];
 
   MovieArray:any=[];
-  sortoption = '';
+  sortoption :string;
+  languageoption:string;
+  genereoption:string;
 
   constructor(private service:BookMyMovieService,private router:Router) { }
 
   ngOnInit() {
 
     this.getMovies();
+    
   }
 
   getMovies()
   {
 
     
-
+    sessionStorage.setItem
+    ('sortoption', JSON.stringify(this.languageoption));
+  
     this.MovieArray=this.service.getMovies()
+
+    //console.log(JSON.parse(sessionStorage.getItem('sortoption')));
+   
 
   }
 
@@ -37,6 +45,12 @@ export class MovieComponent implements OnInit {
   {
     this.router.navigate(['movie',id]);
     console.log(id+"in the com")
+
+  }
+
+  languagechanged()
+  {
+    console.log(this.languageoption);
 
   }
 
