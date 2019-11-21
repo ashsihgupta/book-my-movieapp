@@ -62,11 +62,20 @@
           </div>
             
 
-            <div class="col-sm-3 space">
+            <div class="col-sm-3 space form-group">
               
-                <input type="date"  [(ngModel)]="selectedate" (change)="date()"> 
-              
-            </div>
+              <input type="text"
+            class="form-control"
+            [minDate]="minDate"
+            [maxDate]="maxDate"
+            #dp="bsDatepicker"
+            bsDatepicker
+            [(bsValue)]="myDateValue"
+            value="{{ computeDisplayValue() }}">
+
+
+
+            
 
 <div class="row">
   <div class="col-sm-4 space">
