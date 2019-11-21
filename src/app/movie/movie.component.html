@@ -34,10 +34,10 @@
 
 
 <div class="col-sm-3 option">
-  <label >Generes</label>
-<select [(ngModel)]="genereoption">
+  <label>Generes</label>
+<select [(ngModel)]="genereoption" (change)="generechanged()">
 
-<option *ngFor="let data of Languagedata " >{{data}}</option>
+<option *ngFor="let data of Generes " >{{data}}</option>
 </select>
 </div>
 
@@ -58,7 +58,7 @@
 
 
 
-
+<div *ngIf="flag!=true">
 <div class="row">
 <div  *ngFor="let i of MovieArray | pipe:sortoption | filter:searchText" >
 <div class="col-sm-3 space">
@@ -68,6 +68,21 @@
 </div>
 
 
+</div>
+</div>
+
+
+<div *ngIf="flag==true">
+<div class="row">
+<div  *ngFor="let i of MovieFilter | pipe:sortoption | filter:searchText" >
+<div class="col-sm-3 space">
+<img src="{{i.img}}" id="imgsize" (click) ="getMovieById(i.id)" class="img-responsive"/>
+</div>
+
+</div>
+
+
+</div>
 </div>
 
 

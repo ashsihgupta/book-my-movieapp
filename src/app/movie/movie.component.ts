@@ -14,8 +14,11 @@ export class MovieComponent implements OnInit {
   
  searchText;
   Languagedata:any=['Hindi','English'];
-
+  Generes:any=['Drama','Comedy','Thriller','Action','Horror'];
+  flag:boolean=false;  
   MovieArray:any=[];
+  MovieFilter:any=[];
+  GenereFilter:any=[];
   sortoption :string;
   languageoption:string;
   genereoption:string;
@@ -40,6 +43,7 @@ export class MovieComponent implements OnInit {
 
     //console.log(JSON.parse(sessionStorage.getItem('sortoption')));
    
+    
 
   }
 
@@ -52,8 +56,25 @@ export class MovieComponent implements OnInit {
 
   languagechanged()
   {
+    this.flag=true;
     console.log(this.languageoption);
+     this.MovieFilter=this.MovieArray.filter(data => data.language=== this.languageoption);
+     console.log(this.MovieFilter);
 
   }
+
+generechanged()
+{
+  this.GenereFilter=this.MovieArray.filter(data => data.Genere=== this.genereoption);
+     console.log(this.GenereFilter+""+this.genereoption);
+
+     this.GenereFilter = this.MovieArray.filter(item1 => 
+     !!this.MovieArray.find(item2 => item1.Genere === this.genereoption)
+     
+);
+ console.log(this.GenereFilter);
+}
+
+
 
 }

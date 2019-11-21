@@ -87,7 +87,7 @@
   </div>
             <div class="col-sm-4 space">
 
-          <button type="button" (click)="SeatBooking()" class="btn btn-primary" >Select Seat</button>
+          <button type="button" (click)="SeatBooking()" class="btn btn-primary" [disabled]='!selected'>Select Seat</button>
           
         </div>
 

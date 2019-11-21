@@ -29,6 +29,11 @@ export class MovieDescComponent implements OnInit {
 
    myDateValue: Date;
    registerForm: FormGroup;
+   selected:boolean = false;
+   selectedc:boolean = false;
+   selectedt:boolean = false;
+   selectedd:boolean = false;
+   selectedth:boolean = false;
   
  
 
@@ -36,21 +41,19 @@ export class MovieDescComponent implements OnInit {
     this.getDataById();
     this.Todaysdate();
      this.myDateValue = new Date();
+    
 
-
-     this.registerForm = this.formBuilder.group({
-      city: ['', Validators.required]
-      
-      
-    });
+     
     
     
   }
 
    computeDisplayValue() {
     console.log('#### ' + this.myDateValue);
+    this.selectedd=true;
     sessionStorage.setItem('keydate', JSON.stringify(this.myDateValue));
   }
+
 
   Todaysdate()
   {
@@ -90,7 +93,7 @@ export class MovieDescComponent implements OnInit {
     this.MovieByTheatrer=this.service.getTheater(this.selectedcity);
     console.log(this.selectedcity);
     console.log(this.MovieByTheatrer);
-  
+    this.selectedc=true;
     
     sessionStorage.setItem('key', JSON.stringify(this.selectedcity));
   }
@@ -99,20 +102,27 @@ export class MovieDescComponent implements OnInit {
   {
     
     sessionStorage.setItem('keytime', JSON.stringify(this.selectedtime));
-    console.log(this.selectedtime+"sydsydysyddate")
+    console.log(this.selectedtime+"sydsydysyddate");
+    this.selectedt=true;
   }
 
   
 
   SeatBooking()
   {
-    this.submitted = true; 
+     if(this.selectedc&&this.selectedd&&this.selectedt&&this.selectedth)
+    {
+
+      return this.selected=true;
+
+    }
     this.router.navigate(['seat']);
 
   }
 
   theater()
   {
+    this.selectedth=true;
     sessionStorage.setItem('keytheater',JSON.stringify(this.selectedtheater));
     console.log(this.selectedtheater+"ydfsdfsdfgsfgsf");
   }
