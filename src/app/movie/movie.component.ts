@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {BookMyMovieService} from '../book-my-movie.service';
 import { Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
@@ -18,6 +19,7 @@ export class MovieComponent implements OnInit {
   sortoption :string;
   languageoption:string;
   genereoption:string;
+  
 
   constructor(private service:BookMyMovieService,private router:Router) { }
 

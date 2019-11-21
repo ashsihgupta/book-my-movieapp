@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BookMyMovieService} from '../book-my-movie.service';
 import { Router,ActivatedRoute,ParamMap} from '@angular/router';
 import {DatePipe} from '@angular/common';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,14 +12,15 @@ import {DatePipe} from '@angular/common';
 })
 export class MovieDescComponent implements OnInit {
 
-  constructor(private router:Router,private service:BookMyMovieService,private route: ActivatedRoute,private DatePipe:DatePipe) { }
+  constructor(private router:Router,private service:BookMyMovieService,private route: ActivatedRoute,private DatePipe:DatePipe,private formBuilder: FormBuilder) { }
 
   SingleMovie:any=[];
 
  
   selectedcity:string;
   selectedtime:string;
-  selectedtheater:string
+  selectedtheater:string;
+   submitted = false;
 
   MovieByTheatrer:any=[];
 
@@ -26,6 +28,7 @@ export class MovieDescComponent implements OnInit {
   maxDate=new Date();
 
    myDateValue: Date;
+   registerForm: FormGroup;
   
  
 
@@ -33,6 +36,13 @@ export class MovieDescComponent implements OnInit {
     this.getDataById();
     this.Todaysdate();
      this.myDateValue = new Date();
+
+
+     this.registerForm = this.formBuilder.group({
+      city: ['', Validators.required]
+      
+      
+    });
     
     
   }
@@ -48,7 +58,8 @@ export class MovieDescComponent implements OnInit {
     
     this.maxDate = new Date();
     this.minDate.setDate(this.minDate.getDate());
-    this.maxDate.setDate(this.maxDate.getDate() + 7);
+    this.maxDate.setDate(this.minDate.getDate() + 7);
+    console.log(this.maxDate);
 
     //this.maxDate.setDate(this.minDate.getDate() + 7);
 
@@ -95,7 +106,9 @@ export class MovieDescComponent implements OnInit {
 
   SeatBooking()
   {
+    this.submitted = true; 
     this.router.navigate(['seat']);
+
   }
 
   theater()

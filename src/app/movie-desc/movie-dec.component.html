@@ -17,11 +17,12 @@
   <h4>Imdb Rating:-<span>{{i.Rating}}</span></h4>
   </div>
   <hr>
-
+  
+<div >
   
 
-  <div class="col-sm-2 space">
-              <select [(ngModel)]="selectedcity"  (change)="city()">
+  <div class="col-sm-2 space form-group">
+              <select [(ngModel)]="selectedcity" (change)="city()">
                 
                 <option>Select a City</option> 
                   <option>Pune</option> 
@@ -29,10 +30,11 @@
                   <option>Delhi</option> 
                   <option>Chandigarh</option> 
               </select>
+               
             </div>
 
             <div class="col-sm-2 space">
-              <select [(ngModel)]="selectedtheater" *ngFor="let i of MovieByTheatrer " (change)="theater()">
+              <select [(ngModel)]="selectedtheater" name="theater" *ngFor="let i of MovieByTheatrer " (change)="theater()">
                 
                
                   <option *ngFor="let j of i.theater">{{j}}</option> 
@@ -48,7 +50,7 @@
         
 
             <div class="col-sm-3 space">
-              <select [(ngModel)]="selectedtime" (change)="time()">
+              <select [(ngModel)]="selectedtime" name="time" (change)="time()">
                 <option>Select Time</option> 
                   <option>9:00</option> 
                   <option>1:30</option> 
@@ -70,12 +72,15 @@
             [maxDate]="maxDate"
             #dp="bsDatepicker"
             bsDatepicker
+            placeholder="Select Date"
             [(bsValue)]="myDateValue"
             value="{{ computeDisplayValue() }}">
 
+</div>
 
 
-            
+</div> 
+</div>        
 
 <div class="row">
   <div class="col-sm-4 space">
@@ -91,13 +96,12 @@
         <div class="col-sm-4 space">
   </div>
 
-       
-</div>
-
+      
         
 </div>
-</div>
-</div>
+
+
+
 
 
 

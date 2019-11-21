@@ -13,12 +13,13 @@ import { SeatComponent } from './seat/seat.component';
 import { PipePipe } from './pipe.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import {DatePipe} from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ,RoutingModule,Ng2SearchPipeModule,BrowserAnimationsModule,BsDatepickerModule.forRoot()],
+  imports:      [ BrowserModule, FormsModule ,RoutingModule,  ReactiveFormsModule,Ng2SearchPipeModule,BrowserAnimationsModule,BsDatepickerModule.forRoot()],
   declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent, PipePipe ],
   bootstrap:    [ AppComponent ],
-  providers: [BookMyMovieService]
+  providers: [BookMyMovieService,DatePipe]
 })
 export class AppModule { }
