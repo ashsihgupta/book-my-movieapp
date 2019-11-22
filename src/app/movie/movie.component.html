@@ -74,7 +74,7 @@
 </div>
 
 
-<div *ngIf="flag==true ">
+<div *ngIf="flag==true && Yflag!=true">
  <div *ngIf="GenereFlag!=true">
 <div class="row">
 <div  *ngFor="let i of MovieFilter | pipe:sortoption | filter:searchText" >
@@ -90,7 +90,7 @@
 </div>
 
   
-<div *ngIf="GenereFlag==true">
+<div *ngIf="GenereFlag==true && Yflag!=true">
 <div class="row">
 <div  *ngFor="let i of GenereFilter | pipe:sortoption | filter:searchText" >
 <div class="col-sm-3 space">
@@ -102,6 +102,22 @@
 
 </div>
 </div>
+
+<div *ngIf="Yflag==true">
+<div class="row">
+<div  *ngFor="let i of GenereData | pipe:sortoption | filter:searchText" >
+<div class="col-sm-3 space">
+<img src="{{i.img}}" id="imgsize" (click) ="getMovieById(i.id)" class="img-responsive"/>
+</div>
+
+</div>
+
+<h1 *ngIf="GenereData.length<=0">{{msg}}</h1>
+</div>
+</div>
+
+
+
 
 
 

@@ -14,8 +14,10 @@ export class MovieComponent implements OnInit {
   
  searchText;
   Languagedata:any=['Hindi','English'];
+  msg:string;
   Generes:any=['Drama','Comedy','Thriller','Action','Horror'];
   flag:boolean=false;  
+  Yflag:boolean=false;
   MovieArray:any=[];
   MovieFilter:any=[];
   GenereData:any=[];
@@ -31,6 +33,7 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
 
     this.getMovies();
+    
     
   }
 
@@ -62,6 +65,7 @@ export class MovieComponent implements OnInit {
     console.log(this.languageoption);
      this.MovieFilter=this.MovieArray.filter(data => data.language=== this.languageoption);
      console.log(this.MovieFilter);
+     this.filterAll();
 
   }
 
@@ -70,6 +74,29 @@ generechanged()
   this.GenereFilter=this.MovieArray.filter(obj =>(obj = obj.Genere.filter(ele => ele===this.genereoption)).length);
   console.log(this.GenereFilter);
   this.GenereFlag=true;
+  this.filterAll();
+}
+
+filterAll()
+{
+
+  if(this.flag==true && this.GenereFlag==true)
+  {
+    alert('Yes');
+    
+    this.GenereData=this.GenereFilter.filter(ele => ele.language===this.languageoption);
+    console.log(this.GenereData);
+     this.Yflag=true;
+
+    if(this.GenereData.length<=0)
+    {
+      alert('No');
+      this.msg="NO DATA TO DISPLAY";
+     
+    }
+  }
+
+  console.log(this.Yflag+"flasg");
 }
 
 
