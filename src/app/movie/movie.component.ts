@@ -82,7 +82,7 @@ filterAll()
 
   if(this.flag==true && this.GenereFlag==true)
   {
-    alert('Yes');
+    
     
     this.GenereData=this.GenereFilter.filter(ele => ele.language===this.languageoption);
     console.log(this.GenereData);
@@ -90,7 +90,7 @@ filterAll()
 
     if(this.GenereData.length<=0)
     {
-      alert('No');
+      
       this.msg="NO DATA TO DISPLAY";
      
     }

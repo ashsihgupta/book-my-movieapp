@@ -9,7 +9,8 @@ import {TheaterComponent} from '../theater/theater.component';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: '', component: MovieComponent },
+      { path: 'home', component: MovieComponent},
+       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'movie/:id', component: MovieDescComponent },
       { path: 'seat', component: SeatComponent },
       { path: 'ticket', component: TheaterComponent },
