@@ -240,7 +240,7 @@
   </tr>
 
 
-  <button class="btn" (click)="confirmBooking(newArray)">
+  <button class="btn" title="Please Select The Seat" [disabled]='!flag' (click)="confirmBooking(newArray)">
     Confirm
 </button>
 </table>

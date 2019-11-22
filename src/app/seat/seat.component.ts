@@ -11,6 +11,7 @@ export class SeatComponent implements OnInit {
 
   seat:string;
   no:number;
+  flag:boolean=false;
 
   Booking = [
     {
@@ -148,14 +149,18 @@ export class SeatComponent implements OnInit {
 console.log(this.newArray);
 
  this.no=this.newArray.length;
-
+   if(this.newArray.length>0)
+   {
+     this.flag=true;
+   }
     
   }
 
  confirmBooking(name:any[])
  {
    console.log(name);
-   this.service.seat=this.newArray;
+  
+  
    sessionStorage.setItem('keyseat', JSON.stringify(this.newArray));
    this.service.confirmBooking=name;
    this.router.navigate(['ticket'])

@@ -25,11 +25,13 @@ export class TheaterComponent implements OnInit {
   seat:any[];
   theater:string;
   movie:string;
+  num:any;
   
 
   ngOnInit() {
 
     this.getData();
+    this.num=Math.random().toString(36).substr(2, 5); 
   }
  public downloadPDF() {
     const doc = new jsPDF();
@@ -47,7 +49,7 @@ export class TheaterComponent implements OnInit {
       'elementHandlers': specialElementHandlers
     });
 
-    doc.save('test.pdf');
+    doc.save(this.num+'.pdf');
   }
 
 
