@@ -18,10 +18,12 @@ export class MovieComponent implements OnInit {
   flag:boolean=false;  
   MovieArray:any=[];
   MovieFilter:any=[];
+  GenereData:any=[];
   GenereFilter:any=[];
   sortoption :string;
   languageoption:string;
   genereoption:string;
+  GenereFlag:boolean=false;
   
 
   constructor(private service:BookMyMovieService,private router:Router) { }
@@ -65,14 +67,9 @@ export class MovieComponent implements OnInit {
 
 generechanged()
 {
-  this.GenereFilter=this.MovieArray.filter(data => data.Genere=== this.genereoption);
-     console.log(this.GenereFilter+""+this.genereoption);
-
-     this.GenereFilter = this.MovieArray.filter(item1 => 
-     !!this.MovieArray.find(item2 => item1.Genere === this.genereoption)
-     
-);
- console.log(this.GenereFilter);
+  this.GenereFilter=this.MovieArray.filter(obj =>(obj = obj.Genere.filter(ele => ele===this.genereoption)).length);
+  console.log(this.GenereFilter);
+  this.GenereFlag=true;
 }
 
 

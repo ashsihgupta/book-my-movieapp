@@ -59,10 +59,12 @@
 
 
 <div *ngIf="flag!=true">
+  <div *ngIf="GenereFlag!=true">
 <div class="row">
 <div  *ngFor="let i of MovieArray | pipe:sortoption | filter:searchText" >
 <div class="col-sm-3 space">
 <img src="{{i.img}}" id="imgsize" (click) ="getMovieById(i.id)" class="img-responsive"/>
+</div>
 </div>
 
 </div>
@@ -85,6 +87,19 @@
 </div>
 </div>
 
+  
+<div *ngIf="GenereFlag==true">
+<div class="row">
+<div  *ngFor="let i of GenereFilter | pipe:sortoption | filter:searchText" >
+<div class="col-sm-3 space">
+<img src="{{i.img}}" id="imgsize" (click) ="getMovieById(i.id)" class="img-responsive"/>
+</div>
+
+</div>
+
+
+</div>
+</div>
 
 
 
