@@ -110,12 +110,6 @@ export class MovieDescComponent implements OnInit {
 
   SeatBooking()
   {
-     if(this.selectedc&&this.selectedd&&this.selectedt&&this.selectedth)
-    {
-
-      return this.selected=true;
-
-    }
     this.router.navigate(['seat']);
 
   }
