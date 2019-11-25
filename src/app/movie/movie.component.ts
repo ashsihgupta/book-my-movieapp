@@ -27,6 +27,7 @@ export class MovieComponent implements OnInit {
   genereoption:string;
   GenereFlag:boolean=false;
   
+  
 
   constructor(private service:BookMyMovieService,private router:Router) { }
 

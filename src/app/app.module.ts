@@ -17,10 +17,11 @@ import {DatePipe} from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {LoginGuard} from './login/login.guard';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ,RoutingModule,  ReactiveFormsModule,Ng2SearchPipeModule,BrowserAnimationsModule,BsDatepickerModule.forRoot()],
-  declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent, PipePipe, LoginComponent ],
+  declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent, PipePipe, LoginComponent, RatingComponent ],
   bootstrap:    [ AppComponent ],
   providers: [BookMyMovieService,DatePipe,LoginGuard]
 })

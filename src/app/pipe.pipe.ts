@@ -25,23 +25,17 @@ export class PipePipe implements PipeTransform {
       });
     } 
 
-  //   else if (args === 'option') {
-
-
-  //      return value.sort((a: any) => {
-  //        this.sort = JSON.parse(sessionStorage.getItem('sortoption'));
-  //        this.MovieApiarray = JSON.parse(sessionStorage.getItem('keyseat'));
-  //       if (a.language ===this.sort) {
-  //         return 1;
-        
-  //       } else {
-  //         return 0;
-  //       }
-  //     });
-    
-    
-  // }
-
+   else if (args === 'rating') {
+      return value.sort((a: any, b: any) => {
+        if (a.Rating < b.Rating) {
+          return 1;
+        } else if (a.Rating > b.Rating) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+   }
 
   else if (args === 'language') {
      this.sort = JSON.parse(sessionStorage.getItem('sortoption'));
