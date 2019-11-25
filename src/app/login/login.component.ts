@@ -12,6 +12,7 @@ import {BookMyMovieService} from '../book-my-movie.service';
 export class LoginComponent  {
 
    invalidCredentialMsg: string;
+   authenticated:boolean=false;
     loginForm: FormGroup;
     constructor(private service: BookMyMovieService, private router: Router, private formbuilder: FormBuilder) {
         this.loginForm = this.formbuilder.group({
@@ -22,15 +23,15 @@ export class LoginComponent  {
     onFormSubmit() {
         const uname = this.loginForm.get('username').value;
         const pwd = this.loginForm.get('password').value;
-        this.service.isUserAuthenticated(uname, pwd).subscribe(
-            authenticated => {
-                if (authenticated) {
-                    this.router.navigate(['/books']);
+        console.log("uname"+"pwd");
+        this.authenticated=this.service.isUserAuthenticated(uname, pwd);
+            
+                if (this.authenticated) {
+                    this.router.navigate(['/home']);
                 } else {
                     this.invalidCredentialMsg = 'Invalid Credentials. Try again.';
                 }
-            }
-        );
+          
     }
 
 }

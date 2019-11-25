@@ -190,7 +190,7 @@ export class BookMyMovieService {
 
   SelectedTheaterByCity:any=[];
 
-  User=[
+  Users=[
     {"id":1,
     "username":"Jack",
     "password":"J123"},
@@ -249,12 +249,13 @@ export class BookMyMovieService {
 
   isUserAuthenticated(username: string, password: string) {
 		
-				this.user = this.User.find(user => (user.username === username) && (user.password === password));
+				this.user = this.Users.find(data => (data.username === username) && (data.password === password));
 				if (this.user ) {
 					this.isloggedIn = true;
 				} else {
 					this.isloggedIn = false;
 				}
+         console.log(this.isUserLoggedIn);
 				return this.isloggedIn;
 			
 	}
