@@ -15,11 +15,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {DatePipe} from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import {LoginGuard} from './login/login.guard';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ,RoutingModule,  ReactiveFormsModule,Ng2SearchPipeModule,BrowserAnimationsModule,BsDatepickerModule.forRoot()],
-  declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent, PipePipe ],
+  declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent, PipePipe, LoginComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [BookMyMovieService,DatePipe]
+  providers: [BookMyMovieService,DatePipe,LoginGuard]
 })
 export class AppModule { }

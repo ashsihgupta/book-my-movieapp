@@ -190,6 +190,24 @@ export class BookMyMovieService {
 
   SelectedTheaterByCity:any=[];
 
+  User=[
+    {"id":1,
+    "username":"Jack",
+    "password":"J123"},
+
+     {"id":2,
+    "username":"Mack",
+    "password":"M123"},
+
+     {"id":3,
+    "username":"Feind",
+    "password":"F123"}
+  ];
+
+  user:any=[];
+
+  private isloggedIn = false;
+
  
 
   confirmBooking:any=[];
@@ -227,5 +245,21 @@ export class BookMyMovieService {
     return this.SelectedTheaterByCity;
     
   }
+
+
+  isUserAuthenticated(username: string, password: string) {
+		
+				this.user = this.User.find(user => (user.username === username) && (user.password === password));
+				if (this.user ) {
+					this.isloggedIn = true;
+				} else {
+					this.isloggedIn = false;
+				}
+				return this.isloggedIn;
+			
+	}
+	isUserLoggedIn(): boolean {
+		return this.isloggedIn;
+	}
 
 }

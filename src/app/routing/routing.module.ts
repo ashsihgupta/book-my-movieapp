@@ -5,11 +5,13 @@ import {MovieDescComponent} from '../movie-desc/movie-desc.component'
 import { RouterModule } from '@angular/router';
 import {SeatComponent} from '../seat/seat.component';
 import {TheaterComponent} from '../theater/theater.component';
+import {LoginComponent} from '../login/login.component';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
       { path: 'home', component: MovieComponent},
+      { path: 'login', component: LoginComponent},
        { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'movie/:id', component: MovieDescComponent },
       { path: 'seat', component: SeatComponent },
