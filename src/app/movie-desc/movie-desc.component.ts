@@ -17,9 +17,9 @@ export class MovieDescComponent implements OnInit {
   SingleMovie:any=[];
 
  
-  selectedcity:string;
-  selectedtime:string;
-  selectedtheater:string;
+  selectedcity:string="select";
+  selectedtime:string="select";
+  selectedtheater:string="select";
    submitted = false;
 
   MovieByTheatrer:any=[];

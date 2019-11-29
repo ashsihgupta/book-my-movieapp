@@ -21,25 +21,28 @@
 <div >
   
 
-  <div class="col-sm-2 space form-group">
-              <select [(ngModel)]="selectedcity" (change)="city()">
+  <div class="col-sm-2 space form-group" [class.has-error]="City.touched && City.invalid">
+              <select [(ngModel)]="selectedcity" (change)="city()" name="City" appSelectvalidator #City="ngModel">
                 
-                <option>Select a City</option> 
+                <option value="select">Select a City</option> 
                   <option>Pune</option> 
                   <option>Mumbai</option> 
                   <option>Delhi</option> 
                   <option>Chandigarh</option> 
               </select>
-               
+              <span *ngIf="City.errors?.defaultSelected && City.touched">
+                City is required.
+              </span>
             </div>
 
-            <div class="col-sm-2 space">
-              <select [(ngModel)]="selectedtheater" name="theater" *ngFor="let i of MovieByTheatrer " (change)="theater()">
+            <div class="col-sm-2 space" >
+              <select [(ngModel)]="selectedtheater" name="Atheater" *ngFor="let i of MovieByTheatrer " (change)="theater()"  >
                 
-               
+                
                   <option *ngFor="let j of i.theater">{{j}}</option> 
                   
               </select>
+               
             </div>
 
 
@@ -49,15 +52,18 @@
 
         
 
-            <div class="col-sm-3 space">
-              <select [(ngModel)]="selectedtime" name="time" (change)="time()">
-                <option>Select Time</option> 
+            <div class="col-sm-3 space" [class.has-error]="Mtime.touched && Mtime.invalid">
+              <select [(ngModel)]="selectedtime" name="Mtime" (change)="time()"appSelectvalidator  #Mtime="ngModel">
+                <option value="select">Select Time</option> 
                   <option>9:00</option> 
                   <option>1:30</option> 
                   <option>4:00</option> 
                    <option>7:00</option> 
                   <option>12:00</option> 
               </select>
+               <span *ngIf="Mtime.errors?.defaultSelected && Mtime.touched">
+                Time is required.
+              </span>
             </div>
 
           <div class="col-sm-1 space">

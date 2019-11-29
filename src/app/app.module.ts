@@ -18,10 +18,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {LoginGuard} from './login/login.guard';
 import { RatingComponent } from './rating/rating.component';
+import { SelectvalidatorDirective } from './selectvalidator.directive';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ,RoutingModule,  ReactiveFormsModule,Ng2SearchPipeModule,BrowserAnimationsModule,BsDatepickerModule.forRoot()],
-  declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent, PipePipe, LoginComponent, RatingComponent ],
+  declarations: [ AppComponent, HelloComponent, MovieComponent, TheaterComponent, MovieDescComponent, SeatComponent, PipePipe, LoginComponent, RatingComponent, SelectvalidatorDirective ],
   bootstrap:    [ AppComponent ],
   providers: [BookMyMovieService,DatePipe,LoginGuard]
 })
