@@ -2,6 +2,7 @@ import { Component, OnInit,ElementRef, ViewChild } from '@angular/core';
 import {BookMyMovieService} from '../book-my-movie.service';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import html2canvas from 'html2canvas';
 
 
 @Component({
@@ -35,6 +36,8 @@ export class TheaterComponent implements OnInit {
   }
  public downloadPDF() {
     const doc = new jsPDF();
+
+
 
     const specialElementHandlers = {
       '#editor': function (element, renderer) {
@@ -74,6 +77,8 @@ export class TheaterComponent implements OnInit {
 
     
   }
+
+ 
 
   
 
