@@ -2,7 +2,7 @@
 
 table th {
     width: 200px;
-    margin-left: auto;
+    margin-left: 200px;
     margin-right: auto; 
     text-align: center;
    
@@ -14,6 +14,11 @@ table th {
 h4
 {
   text-align: center;
+}
+
+.center
+{
+  margin-left: 50px;
 }
 
 

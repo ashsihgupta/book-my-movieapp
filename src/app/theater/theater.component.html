@@ -1,73 +1,14 @@
-<!-- 
 
-
-
-<div id="content" #content>
-  <h4>Movie Ticket</h4>
- 
-
-
-  <table  class="table table-sm" >
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <td>Auditorium</td>
-      <td></td>
-      <td>{{theater}}</td>
-  
-      
-    </tr>
-      <tr>
-      <td>Seat</td>
-      <td></td>
-      <td ><span *ngFor="let i of seat">{{i}}</span></td>
-    </tr>
-
-<tr>
-      <td>Movie</td>
-      <td></td>
-      <td >{{movie}}</td>
-    </tr>
-
-    
-    <tr>
-      <td>Date</td>
-      <td></td>
-      <td>{{date| date}}</td>
-    </tr>
-
-
-    <tr>
-      <td>Time</td>
-      <td></td>
-      <td>{{time}}</td>
-    </tr>
-
-   
-
-
-    <tr>
-      <td>City</td>
-      <td></td>
-      <td>{{city}}</td>
-    </tr>
-  </table>
-</div>
-
-
-<div style="text-align:center;">
-<button (click)="downloadPDF()" class="btn btn-success">Export To PDF</button>
-</div>
-
- -->
 
   
 <div id="content" class="container" #content>  
-    
-    <table id="contentToConvert"  class="table-sm">  
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+
+      <div class="col-md-4">
+
+         <table id="contentToConvert"  class="table-sm">  
         <tr>  
           <th>Movie</th>  
           <th>*****</th>  
@@ -115,8 +56,16 @@
       <td>{{city}}</td>
     </tr>
     </table>
+    
+      </div>
 
+
+      <div class="col-md-4">
+      </div>
+
+    </div>
+   
 </div>  
-<div style="text-align:center;">
+<div style="text-align:center;margin-top:20px">
 <button (click)="downloadPDF()" class="btn btn-success">Export To PDF</button>
 </div>
