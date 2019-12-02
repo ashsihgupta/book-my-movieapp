@@ -18,9 +18,13 @@
   </div>
   <hr>
   
-<div >
-  
 
+
+<div>
+
+  <form  #subForm="ngForm">
+  
+  
   <div class="col-sm-2 space form-group" [class.has-error]="City.touched && City.invalid">
               <select [(ngModel)]="selectedcity" (change)="city()" name="City" appSelectvalidator #City="ngModel">
                 
@@ -85,25 +89,28 @@
 </div>
 
 
-</div> 
-</div>        
+
+
+       
 
 <div class="row">
   <div class="col-sm-4 space">
   </div>
             <div class="col-sm-4 space">
 
-          <button type="button" title="Please Select the fields " (click)="SeatBooking()" class="btn btn-primary" [disabled]='!(selectedc && selectedd && selectedt && selectedth)'>Select Seat</button>
+          <button type="button" title="Please Select the fields " (click)="SeatBooking()" class="btn btn-primary" [disabled]="!subForm.form.valid">Select Seat</button>
           
         </div>
 
   
 
         <div class="col-sm-4 space">
-  </div>
-
+  
+</div>
       
         
+</div>
+  </form>
 </div>
 
 
