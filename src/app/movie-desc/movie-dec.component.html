@@ -30,7 +30,7 @@
                   <option>Delhi</option> 
                   <option>Chandigarh</option> 
               </select>
-              <span *ngIf="City.errors?.defaultSelected && City.touched">
+              <span class="error" *ngIf="City.errors?.defaultSelected && City.touched">
                 City is required.
               </span>
             </div>
@@ -61,7 +61,7 @@
                    <option>7:00</option> 
                   <option>12:00</option> 
               </select>
-               <span *ngIf="Mtime.errors?.defaultSelected && Mtime.touched">
+               <span class="error" *ngIf="Mtime.errors?.defaultSelected && Mtime.touched">
                 Time is required.
               </span>
             </div>

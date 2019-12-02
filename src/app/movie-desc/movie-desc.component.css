@@ -23,6 +23,11 @@ p{
   
 }
 
+error
+{
+  margin-top: 10px;
+}
+
 span
 {
   color:brown;
