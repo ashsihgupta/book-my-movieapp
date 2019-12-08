@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BookMyMovieService} from '../book-my-movie.service';
 import { Router,ActivatedRoute,ParamMap} from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-seat',
@@ -44,7 +45,7 @@ export class SeatComponent implements OnInit {
   
 
   
-  constructor(private service :BookMyMovieService,private router:Router) { }
+  constructor(private service :BookMyMovieService,private router:Router,private _flashMessagesService: FlashMessagesService) { }
 
   ngOnInit() {
 
@@ -163,7 +164,8 @@ console.log(this.newArray);
   
    sessionStorage.setItem('keyseat', JSON.stringify(this.newArray));
    this.service.confirmBooking=name;
-   this.router.navigate(['ticket'])
+   this.router.navigate(['ticket']);
+    this._flashMessagesService.show('Your Booking is Confirmed !', { cssClass: 'alert-success', timeout: 1000 });
  }
 
   
